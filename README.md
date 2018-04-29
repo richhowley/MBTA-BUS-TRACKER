@@ -1,6 +1,6 @@
 # MBTA BUS TRACKER
 
-This [web app](http://www.alotish.com/bustracker) is used for real-time tracking of MBTA buses.  It uses the MBTA V3 API to obtain tracking data and OpenLayers to display information on a map.
+This [web app](http://www.alotish.com/bustracker) is used for real-time tracking of MBTA buses.  It uses the MBTA [V3 API](https://mbta.com/developers/v3-api) to obtain tracking data and [OpenLayers](https://openlayers.org/) to display information on a map.
 
 Any tracked bus round on the MBTA may be selected.  A map is shown will all active buses in both directions.  The interface allows selection of one direction so only buses in that direction will be tracked.
 
