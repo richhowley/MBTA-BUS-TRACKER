@@ -1,0 +1,47 @@
+<!-- Bus Tracking screen -->
+
+<!-- Back button, page header -->
+<div class="row">
+    <div class="col">
+        <button type="button" ng-click="busCtrl.clearRoute()" class="btn btn-outline-success">Back</button>
+    </div>
+    <div class="col">
+        <span class="route-name text-center">Route: {{busCtrl.routeName}}</span>
+    </div>
+</div>
+
+<!-- Map -->
+<div class="row">
+    <div class="col">
+        <div id="map"></div>
+    </div>
+</div>
+
+<!-- Marker Key -->
+<div class="row">
+    <div class="col text-center">
+         <list-group>
+            <list-group-item class="map-key" ng-repeat="dir in busCtrl.directionNames">
+                <img ng-src="{{busCtrl.markerFiles[$index]}}"/>
+                <span >{{dir}} </span>
+            </list-group-item>
+        </list-group>
+    </div>
+        
+    <!-- Direction Selection -->
+    <div class="col">     
+         <label class="tracking-label">Tracking:</label>
+        <div class="btn-group">
+          <label class="btn btn-secondary">
+            <input type="radio"  ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="-1" > All Busses
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="0" > {{busCtrl.directionNames[0]}}
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="1" > {{busCtrl.directionNames[1]}}
+          </label>
+        </div>
+        
+    </div>
+</div>

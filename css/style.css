@@ -1,0 +1,108 @@
+
+
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.btn-outline-success {
+    color: #555555;
+}
+
+.name {
+    
+    font-size: .9em;
+    color: black;
+    padding: 5px;
+    -webkit-user-select: none;
+    width: 80%;
+
+}
+
+.stop-popup {
+    padding: 20px;
+    background-color: white;
+    width : auto;
+    height : auto;
+    border: 1px solid maroon;
+
+}
+
+.vehicle-popup {
+    padding: 20px;
+    background-color: white;
+    width : auto;
+    height : auto;
+    border: 1px solid #444444;
+
+}
+
+.stop-popup p {
+    
+    color: #444444;
+    padding: 5px;
+    -webkit-user-select: none;     
+    
+}
+
+.vehicle-popup p {
+    
+    -webkit-user-select: none;     
+    
+}
+
+.vehicle-popup-label {
+    font-size: .85em;
+    color: bladk;
+}
+
+.vehicle-popup-direction {
+    font-size: .9em;
+    color: bladk;
+    
+}
+
+.vehicle-popup-status-label {
+    font-size: .85em;
+    color: bladk;
+}
+
+
+.vehicle-popup-status {
+    font-size: .8em;
+    color: bladk;
+}
+
+.route-selection a {
+    
+    width:65px;
+    margin: 10px;   
+    
+}
+
+.select-header {
+    color: #888888;
+}
+
+.route-name {
+    font-size: 1.5em;
+    color: #888888;
+}
+
+.tracking-label {
+    font-size: 1.3em;
+}
+
+.map-key {
+    margin: 15px;
+    font-size: 0.8em;
+}
+
+.predictions p {
+    
+    font-size: 1.0em;
+    color: #555577;
+    
+}
+
+
+

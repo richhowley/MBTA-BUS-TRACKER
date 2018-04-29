@@ -1,0 +1,15 @@
+<!-- Route Selection -->        
+<div ng-show="!busCtrl.route">
+    
+    <div class="select-header">
+        <h2 class="text-center">Pick A Bus, Any Bus</h2>
+    </div>
+    
+   <list-group>
+       <list-group-item class="route-selection">
+         <a ng-repeat="route in busCtrl.allRoutes" ng-click="busCtrl.setRoute($index)"
+            class="btn btn-outline-success" href="#" >
+             {{route.attributes.short_name }}</a>
+       </list-group-item>
+   </list-group>
+</div>
