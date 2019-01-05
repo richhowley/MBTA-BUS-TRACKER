@@ -36,10 +36,12 @@
             <input type="radio"  ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="-1" > All Busses
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="0" > {{busCtrl.directionNames[0]}}
+            <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="0" >
+            {{busCtrl.directionNames[0]}} to {{busCtrl.directionDest[0]}}
           </label>
           <label class="btn btn-secondary">
-            <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="1" > {{busCtrl.directionNames[1]}}
+            <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="1" >
+            {{busCtrl.directionNames[1]}} to {{busCtrl.directionDest[1]}}
           </label>
         </div>
         

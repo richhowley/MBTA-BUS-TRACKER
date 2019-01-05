@@ -13,7 +13,8 @@
    {
 
       this.allRoutes = [];          // list of all routes - used for UI
-      this.directionNames=[];       // usually inboud and outbound, contained in route data 
+      this.directionNames=[];       // usually inboud and outbound, contained in route data
+      this.directionDest=[];         // destination for each direction
       this.stops = []               // name of each stop on a route
       this.shapes = [];             // polylines for shapes in each direction
       
@@ -31,7 +32,7 @@
        
          _this.allRoutes = response.data.data;
          
-         // routes not tracked by GPS are at end of array and their
+        // routes not tracked by GPS are at end of array and their
         // ids are > 700
         
         // reverse the list
@@ -71,12 +72,16 @@
             this.route = this.allRoutes[idx].id;
             
           
-            // get route information - direction name indicies are in vehicle informaiotn
+            // get route information - direction name indicies are in vehicle information
            $http.get("https://api-v3.mbta.com/routes/"+_this.route+"?api_key="+my_api_key).then(function(response) {
    
                // record direction names
                _this.directionNames = response.data.data.attributes.direction_names;
+               
+               // record direction destinaitons
+               _this.directionDest = response.data.data.attributes.direction_destinations;
    
+               // use short name for route name
                _this.routeName = response.data.data.attributes.short_name;
                
                // get route shape and stop information
@@ -100,7 +105,7 @@
                // build map of route and stops
                buildMap(_this.shapes,_this.stops, _this.markerFiles, _this.getPredictions);      
                
-               // update vehicle posiitons on map
+               // update vehicle positions on map
                _this.getVehicles();
                
                     intervalPromise = $interval(function() {
@@ -117,7 +122,7 @@
  
       // buildPredList
       //
-      // Use the passed predictions to finn in arrival times in HTML
+      // Use the passed predictions to format arrival times in HTML
       //
       this.buildPredList = function(predList,dirID, listElem) {
          
@@ -139,7 +144,7 @@
             node.className = "list-group-item";
             node.appendChild(document.createTextNode(moment(predList[i].attributes.arrival_time).fromNow()));
               
-            // add list items      
+            // add list item    
             listElem.appendChild(node);
             
             // increment count
@@ -163,7 +168,7 @@
         var reqStr = "https://api-v3.mbta.com//predictions?sort=arrival_time,direction_id&filter[stop]="+elem.stopID+"&filter[route]="+_this.route;
                            
  
-        // filter for direction if desired
+      // filter for direction if desired
       if( _this.directionFilter >= 0)
       {
          reqStr += "&filter[direction_id]="+_this.directionFilter;
@@ -179,11 +184,11 @@
             // make a div for the predictions
             var predDiv;
             
-            // for each directions
+            // for each direction
             for( vDirection=0; vDirection < dirs; vDirection++ )
             {
             
-               // find existing list, if there is on
+               // find existing list, if there is one
                predDiv = document.getElementById('predictions' + '-' + _this.directionNames[vDirection]);
                
                // nuke any old predictinos
@@ -198,12 +203,12 @@
             // get list of predictions
             var predList = data.data;
             
-            // if any predicitions for this stop
+            // if any predictions for this stop
             if( predList.length > 0 )
             {
   
                   
-                  // for each directions
+                  // for each direction
                   for( vDirection=0; vDirection < dirs; vDirection++ )
                   {
   
@@ -271,7 +276,7 @@
         
             // set descrition for popup
             
-             // for each vehicle
+            // for each vehicle
             vehicles.forEach(function(vehicle) {
                
                // get stop name
@@ -306,7 +311,7 @@
         
     }     
            
-       // deselect route
+      // deselect route
       this.clearRoute = function() {
          
          // stop interval
