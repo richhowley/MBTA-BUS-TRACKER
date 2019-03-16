@@ -280,7 +280,8 @@
             vehicles.forEach(function(vehicle) {
                
                // get stop name
-               var sname=_this.stops.find(function(s) { return(s.id===vehicle.relationships.stop.data.id) });
+               var sname = vehicle.relationships.stop.data === null ? null :
+                 _this.stops.find(function(s) { return(s.id===vehicle.relationships.stop.data.id) });
                     
                // div for vehicle popup
                vehicle.desc  = "<div>";
@@ -292,7 +293,7 @@
                vehicle.desc  += "<p class='vehicle-popup-direction'>Direction:  "+_this.directionNames[vehicle.attributes.direction_id]+"</p>";
                
                // show status if we got a good stop name
-               if( sname !== undefined )
+               if( sname !== undefined && sname !== null )
                {
                   vehicle.desc += "<p class='vehicle-popup-status-label'>Last Status:</p>";
                   vehicle.desc +=  "<p class='ml-1 vehicle-popup-status'>"+vehicle.attributes.current_status+"<br>";

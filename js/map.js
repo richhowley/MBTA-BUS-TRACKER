@@ -12,11 +12,11 @@
         image: new ol.style.Circle ({
           radius: 5,
           stroke: new ol.style.Stroke({
-           color: '#00ff00',
+           color: '#ffa366',
            width: 1
           }),
           fill: new ol.style.Fill({
-           color: '#ff0000'
+           color: '#e65c00'
           })
         })
       });
@@ -368,7 +368,7 @@
 
     // clearStopPopups
     //
-    // Celar any stop popups from screen
+    // Clear any stop popups from screen
     //
     function clearStopPopups()
     {
