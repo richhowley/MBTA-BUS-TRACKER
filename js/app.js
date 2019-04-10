@@ -259,7 +259,7 @@
    this.getVehicles = function ()
    {
       
-        var reqStr = "https://api-v3.mbta.com/vehicles?api_key"+my_api_key+"&filter[route]="
+        var reqStr = "https://api-v3.mbta.com/vehicles?api_key="+my_api_key+"&filter[route]="
                            +_this.route+"&include=stop";
  
         // filter for direction if desired
