@@ -17,33 +17,31 @@
     </div>
 </div>
 
-<!-- Marker Key -->
+
 <div class="row">
-    <div class="col text-center">
-         <list-group>
-            <list-group-item class="map-key" ng-repeat="dir in busCtrl.directionNames">
-                <img ng-src="{{busCtrl.markerFiles[$index]}}"/>
-                <span >{{dir}} </span>
-            </list-group-item>
-        </list-group>
-    </div>
-        
+
     <!-- Direction Selection -->
-    <div class="col">     
-         <label class="tracking-label">Tracking:</label>
-        <div class="btn-group">
-          <label class="btn btn-secondary">
+    <div class="col">
+        
+         
+        <div class="btn-group align-middle">
+            
+          <!-- <button >Tracking:</button> -->
+ 
+          <button class="btn btn-secondary" ng-click="busCtrl.setDirectionFilter(-1)">
             <input type="radio"  ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="-1" > All Busses
-          </label>
-          <label class="btn btn-secondary">
+          </button>
+          <button class="btn btn-secondary" ng-click="busCtrl.setDirectionFilter(0)">
             <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="0" >
             {{busCtrl.directionNames[0]}} to {{busCtrl.directionDest[0]}}
-          </label>
-          <label class="btn btn-secondary">
+           <img ng-src="{{busCtrl.markerFiles[0]}}"/>
+          </button>
+          <button class="btn btn-secondary" ng-click="busCtrl.setDirectionFilter(1)">
             <input type="radio" ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="1" >
             {{busCtrl.directionNames[1]}} to {{busCtrl.directionDest[1]}}
-          </label>
+            <img ng-src="{{busCtrl.markerFiles[1]}}"/>
+          </button>
         </div>
-        
+       
     </div>
 </div>

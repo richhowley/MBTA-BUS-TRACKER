@@ -260,10 +260,10 @@
    {
       
         var reqStr = "https://api-v3.mbta.com/vehicles?api_key="+my_api_key+"&filter[route]="
-                           +_this.route+"&include=stop";
+                           +this.route+"&include=stop";
  
         // filter for direction if desired
-        if( _this.directionFilter >= 0)
+        if( this.directionFilter >= 0)
         {
            reqStr += "&filter[direction_id]="+_this.directionFilter;
            
@@ -310,7 +310,19 @@
             
          });
         
-    }     
+    }
+    
+    // setDirectionFilter
+    //
+    // A direction filter button has been clicked
+    // set direction and update map
+    //
+    this.setDirectionFilter = function(dir)
+    {
+      this.directionFilter = dir;
+      this.getVehicles();
+      
+    }
            
       // deselect route
       this.clearRoute = function() {
