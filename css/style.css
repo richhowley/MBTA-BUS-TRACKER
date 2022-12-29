@@ -9,7 +9,7 @@ body {
 }
 
 .name {
-    
+
     font-size: .9em;
     color: black;
     padding: 5px;
@@ -22,7 +22,7 @@ body {
     padding: 20px;
     background-color: white;
     width : auto;
-    height : auto;
+    height : 300px;
     border: 1px solid maroon;
 
 }
@@ -37,17 +37,17 @@ body {
 }
 
 .stop-popup p {
-    
+
     color: #444444;
     padding: 5px;
-    -webkit-user-select: none;     
-    
+    -webkit-user-select: none;
+
 }
 
 .vehicle-popup p {
-    
-    -webkit-user-select: none;     
-    
+
+    -webkit-user-select: none;
+
 }
 
 .vehicle-popup-label {
@@ -58,7 +58,7 @@ body {
 .vehicle-popup-direction {
     font-size: .9em;
     color: bladk;
-    
+
 }
 
 .vehicle-popup-status-label {
@@ -73,10 +73,10 @@ body {
 }
 
 .route-selection a {
-    
+
     width:65px;
-    margin: 10px;   
-    
+    margin: 10px;
+
 }
 
 .select-header {
@@ -98,11 +98,12 @@ body {
 }
 
 .predictions p {
-    
+
     font-size: 1.0em;
     color: #555577;
-    
+
 }
 
-
-
+#map {
+  height: 500px;
+}

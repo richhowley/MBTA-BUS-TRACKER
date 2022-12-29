@@ -22,12 +22,12 @@
 
     <!-- Direction Selection -->
     <div class="col">
-        
-         
+
+
         <div class="btn-group align-middle">
-            
+
           <!-- <button >Tracking:</button> -->
- 
+
           <button class="btn btn-secondary" ng-click="busCtrl.setDirectionFilter(-1)">
             <input type="radio"  ng-model="busCtrl.directionFilter" ng-change="busCtrl.getVehicles()"  ng-value="-1" > All Busses
           </button>
@@ -42,6 +42,6 @@
             <img ng-src="{{busCtrl.markerFiles[1]}}"/>
           </button>
         </div>
-       
+
     </div>
 </div>
